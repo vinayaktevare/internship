@@ -1,0 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as plot
+file_name = "Requirements Dataset.csv"
+require = pd.read_csv(file_name)
+require
+
+
+require.describe()
+
+
+require["total_benefited"]=require.sum(axis=1)
+require.head()
+
+
+import numpy as np
+xlabels = require['Topic'].values
+plot.figure(figsize=(30, 10))
+plot.xticks(np.arange(xlabels.shape[0]), xlabels, rotation = 'vertical', fontsize = 30)
+plot.xticks
+plot.bar(np.arange(require.values.shape[0]),require['Tools used'],align = 'edge')
